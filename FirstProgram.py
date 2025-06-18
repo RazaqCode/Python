@@ -1,6 +1,4 @@
-age = 24
-old = True
-a = None
-
-print(type(old))
-print(type(a))
+a = 2
+b = 3
+sum = a+b
+print(sum)
