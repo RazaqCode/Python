@@ -1,9 +1,6 @@
-name1 = 'razaq'
-name2 = "razaq"
-name3 = """razaq"""
+age = 24
+old = True
+a = None
 
-
-print (name1)
-print (name2)
-print (name3)
-
+print(type(old))
+print(type(a))
