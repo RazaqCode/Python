@@ -1,6 +1,4 @@
+a = int (input("enter the 1st num: "))
+b = int (input("enter the 2nd num: "))
 
-
-side = float(input("enter the side "))
-
-
-print ("the area fo the square is ", side * 4)
+print(a > b)
