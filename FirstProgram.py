@@ -1,4 +1,4 @@
-a = 2
-b = 3
-mul = a*b
-print(mul)
+num1 = int (input("enter num 1 "))
+num2 = int (input("enter num 2 "))
+sum = num1 + num2
+print ("the sum is", sum)
