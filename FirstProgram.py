@@ -1,4 +1,6 @@
-num1 = int (input("enter num 1 "))
-num2 = int (input("enter num 2 "))
-sum = num1 + num2
-print ("the sum is", sum)
+
+
+side = float(input("enter the side "))
+
+
+print ("the area fo the square is ", side * 4)
