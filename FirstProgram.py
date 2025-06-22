@@ -1,10 +1,8 @@
-# Simple Python program to check even or odd
+# Reverse a string using slicing
 
-# Get input from the user
-num = int(input("Enter a number: "))
+def reverse_string(s):
+    return s[::-1]
 
-# Check if the number is even or odd
-if num % 2 == 0:
-    print(f"{num} is Even")
-else:
-    print(f"{num} is Odd")
+# Example
+string = input("Enter a string: ")
+print("Reversed string:", reverse_string(string))
