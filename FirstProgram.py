@@ -1,10 +1,10 @@
-# Reverse a string using a loop
+# Reverse a string using recursion
 
 def reverse_string(s):
-    reversed_str = ""
-    for char in s:
-        reversed_str = char + reversed_str
-    return reversed_str
+    if len(s) == 0:
+        return s
+    else:
+        return reverse_string(s[1:]) + s[0]
 
 # Example
 string = input("Enter a string: ")
