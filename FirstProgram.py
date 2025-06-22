@@ -1,4 +1,10 @@
-a = int (input("enter the 1st num: "))
-b = int (input("enter the 2nd num: "))
+# Simple Python program to check even or odd
 
-print(a > b)
+# Get input from the user
+num = int(input("Enter a number: "))
+
+# Check if the number is even or odd
+if num % 2 == 0:
+    print(f"{num} is Even")
+else:
+    print(f"{num} is Odd")
