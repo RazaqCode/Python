@@ -1,11 +1,19 @@
-# Reverse a string using recursion
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        length = 0
+        i = len(s) - 1
 
-def reverse_string(s):
-    if len(s) == 0:
-        return s
-    else:
-        return reverse_string(s[1:]) + s[0]
+        # Skip trailing spaces
+        while i >= 0 and s[i] == ' ':
+            i -= 1
 
-# Example
-string = input("Enter a string: ")
-print("Reversed string:", reverse_string(string))
+        # Count the length of the last word
+        while i >= 0 and s[i] != ' ':
+            length += 1
+            i -= 1
+
+        return length
