@@ -1,19 +1,18 @@
 class Solution(object):
-    def lengthOfLastWord(self, s):
+    def lengthOfLongestSubstring(self, s):
         """
         :type s: str
         :rtype: int
         """
-        length = 0
-        i = len(s) - 1
+        char_set = set()
+        left = 0
+        max_length = 0
 
-        # Skip trailing spaces
-        while i >= 0 and s[i] == ' ':
-            i -= 1
+        for right in range(len(s)):
+            while s[right] in char_set:
+                char_set.remove(s[left])
+                left += 1
+            char_set.add(s[right])
+            max_length = max(max_length, right - left + 1)
 
-        # Count the length of the last word
-        while i >= 0 and s[i] != ' ':
-            length += 1
-            i -= 1
-
-        return length
+        return max_length
