@@ -1,8 +1,7 @@
-# Check if a number is even or odd
+# Reverse a string in Python
 
-number = 24  # You can change this to any number
+text = "hello"
+reversed_text = text[::-1]
 
-if number % 2 == 0:
-    print(number, "is even")
-else:
-    print(number, "is odd")
+print("Original:", text)
+print("Reversed:", reversed_text)
