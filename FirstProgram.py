@@ -1,12 +1,8 @@
-# Simple Python Program
+# Check if a number is even or odd
 
-# Print a greeting
-print("Hello, welcome to Python!")
+number = 7  # You can change this to any number
 
-# Add two numbers
-a = 5
-b = 3
-sum = a + b
-
-# Print the result
-print("The sum of", a, "and", b, "is", sum)
+if number % 2 == 0:
+    print(number, "is even")
+else:
+    print(number, "is odd")
