@@ -1,21 +1,12 @@
-# Basic Python Data Types
-a = 10                   # int
-b = 3.14                 # float
-c = "Hello"              # str
-d = [1, 2, 3]            # list
-e = (4, 5, 6)            # tuple
-f = {7, 8, 9}            # set
-g = {"name": "Razaq"}    # dict
-h = True                 # bool
-i = None                 # NoneType
+# Simple Python Program
 
-# Print type of each variable
-print(type(a))
-print(type(b))
-print(type(c))
-print(type(d))
-print(type(e))
-print(type(f))
-print(type(g))
-print(type(h))
-print(type(i))
+# Print a greeting
+print("Hello, welcome to Python!")
+
+# Add two numbers
+a = 5
+b = 3
+sum = a + b
+
+# Print the result
+print("The sum of", a, "and", b, "is", sum)
