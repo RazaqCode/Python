@@ -1,7 +1,10 @@
-print("3. *args and **kwargs")
-def example_func(*args, **kwargs):
-    print("Args:", args)
-    print("Kwargs:", kwargs)
+print("8. Generators")
+def count_up_to(max):
+    count = 1
+    while count <= max:
+        yield count
+        count += 1
 
-example_func(1, 2, 3, name="Razaq", role="Developer")
+for num in count_up_to(3):
+    print("Yielded:", num)
 print()
