@@ -1,10 +1,7 @@
-print("8. Generators")
-def count_up_to(max):
-    count = 1
-    while count <= max:
-        yield count
-        count += 1
-
-for num in count_up_to(3):
-    print("Yielded:", num)
-print()
+print("10. Exception Handling")
+try:
+    value = 10 / 0
+except ZeroDivisionError as e:
+    print("Caught an exception:", e)
+finally:
+    print("This block always executes")
