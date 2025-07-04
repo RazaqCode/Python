@@ -1,3 +1,12 @@
-text = input("Enter a string: ")
-reversed_text = text[::-1]
-print("Reversed string:", reversed_text)
+def decorator_func(func):
+    def wrapper():
+        print("Before function")
+        func()
+        print("After function")
+    return wrapper
+
+@decorator_func
+def greet():
+    print("Hello")
+
+greet()
