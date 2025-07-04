@@ -1,12 +1,6 @@
-def decorator_func(func):
-    def wrapper():
-        print("Before function")
-        func()
-        print("After function")
-    return wrapper
-
-@decorator_func
-def greet():
-    print("Hello")
-
-greet()
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+finally:
+    print("Always runs")
