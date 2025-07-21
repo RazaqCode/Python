@@ -1,4 +1,5 @@
-text = input("Enter text: ").lower()
-vowels = "aeiou"
-count = sum(1 for char in text if char in vowels)
-print("Number of vowels:", count)
+n = int(input("How many Fibonacci numbers? "))
+a, b = 0, 1
+for _ in range(n):
+    print(a, end=' ')
+    a, b = b, a + b
