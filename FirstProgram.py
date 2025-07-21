@@ -1,5 +1,4 @@
-n = int(input("Enter a number: "))
-fact = 1
-for i in range(1, n + 1):
-    fact *= i
-print("Factorial is:", fact)
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+a, b = b, a
+print("After swap: a =", a, "b =", b)
