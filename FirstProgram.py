@@ -1,3 +1,5 @@
-num = int(input("Enter a number: "))
-for i in range(1, 11):
-    print(f"{num} x {i} = {num*i}")
+word = input("Enter a word: ").lower()
+if word == word[::-1]:
+    print("It's a palindrome!")
+else:
+    print("Not a palindrome.")
