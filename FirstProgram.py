@@ -1,14 +1,3 @@
-a = float(input("Enter first number: "))
-b = float(input("Enter second number: "))
-op = input("Enter operation (+, -, *, /): ")
-
-if op == '+':
-    print("Result:", a + b)
-elif op == '-':
-    print("Result:", a - b)
-elif op == '*':
-    print("Result:", a * b)
-elif op == '/':
-    print("Result:", a / b)
-else:
-    print("Invalid operation")
+num = int(input("Enter a number: "))
+for i in range(1, 11):
+    print(f"{num} x {i} = {num*i}")
