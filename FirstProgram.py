@@ -1,5 +1,14 @@
-n = int(input("How many Fibonacci numbers? "))
-a, b = 0, 1
-for _ in range(n):
-    print(a, end=' ')
-    a, b = b, a + b
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+op = input("Enter operation (+, -, *, /): ")
+
+if op == '+':
+    print("Result:", a + b)
+elif op == '-':
+    print("Result:", a - b)
+elif op == '*':
+    print("Result:", a * b)
+elif op == '/':
+    print("Result:", a / b)
+else:
+    print("Invalid operation")
