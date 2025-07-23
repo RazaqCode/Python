@@ -1,2 +1,1 @@
-import random
-print("You rolled:", random.randint(1, 6))
+print ("holala")
