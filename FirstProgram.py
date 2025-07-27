@@ -1,59 +1,18 @@
-from collections import defaultdict
-
 class Solution:
-    def isValidSudoku(self, board: list[list[str]]) -> bool:
-        # Using defaultdict(set) for convenience
-        rows = defaultdict(set)
-        cols = defaultdict(set)
-        boxes = defaultdict(set) # Key will be (row_block, col_block) e.g., (0,0) for top-left 3x3
+    def coinChange(self, coins: list[int], amount: int) -> int:
+        # dp[i] will store the minimum number of coins needed for amount i
+        dp = [float('inf')] * (amount + 1)
+        dp[0] = 0 # 0 coins needed for amount 0
 
-        for r in range(9):
-            for c in range(9):
-                char = board[r][c]
-                if char == '.':
-                    continue
+        for i in range(1, amount + 1):
+            for coin in coins:
+                if i - coin >= 0:
+                    dp[i] = min(dp[i], dp[i - coin] + 1)
 
-                # Check row
-                if char in rows[r]:
-                    return False
-                rows[r].add(char)
+        return dp[amount] if dp[amount] != float('inf') else -1
 
-                # Check column
-                if char in cols[c]:
-                    return False
-                cols[c].add(char)
-
-                # Check 3x3 box
-                box_id = (r // 3, c // 3)
-                if char in boxes[box_id]:
-                    return False
-                boxes[box_id].add(char)
-
-        return True
-
-# Test Cases (LeetCode examples or standard valid/invalid boards)
-valid_board = [
-  ["5","3",".",".","7",".",".",".","."],
-  ["6",".",".","1","9","5",".",".","."],
-  [".","9","8",".",".",".",".","6","."],
-  ["8",".",".",".","6",".",".",".","3"],
-  ["4",".",".","8",".","3",".",".","1"],
-  ["7",".",".",".","2",".",".",".","6"],
-  [".","6",".",".",".",".","2","8","."],
-  [".",".",".","4","1","9",".",".","5"],
-  [".",".",".",".","8",".",".","7","9"]
-]
-print(f"Valid Sudoku (valid board): {Solution().isValidSudoku(valid_board)}") # Expected: True
-
-invalid_board = [
-  ["8","3",".",".","7",".",".",".","."],
-  ["6",".",".","1","9","5",".",".","."],
-  [".","9","8",".",".",".",".","6","."],
-  ["8",".",".",".","6",".",".",".","3"],
-  ["4",".",".","8",".","3",".",".","1"],
-  ["7",".",".",".","2",".",".",".","6"],
-  [".","6",".",".",".",".","2","8","."],
-  [".",".",".","4","1","9",".",".","5"],
-  [".",".",".",".","8",".",".","7","9"]
-] # Has two 8s in the first column
-print(f"Valid Sudoku (invalid board): {Solution().isValidSudoku(invalid_board)}") # Expected: False
+# Test Cases
+print(f"Coin Change for coins=[1,2,5], amount=11: {Solution().coinChange([1,2,5], 11)}") # Expected: 3
+print(f"Coin Change for coins=[2], amount=3: {Solution().coinChange([2], 3)}") # Expected: -1
+print(f"Coin Change for coins=[1], amount=0: {Solution().coinChange([1], 0)}") # Expected: 0
+print(f"Coin Change for coins=[186,419,83,408], amount=6249: {Solution().coinChange([186,419,83,408], 6249)}") # Expected: 20
